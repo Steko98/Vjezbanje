@@ -1,4 +1,5 @@
 ﻿using Vjezbe;
 
 //V01BMICalc.Izvedi();
-V02CalcBMI.Izvedi();
+//V02CalcBMI.Izvedi();
+V03TicketPrice.Izvedi();
