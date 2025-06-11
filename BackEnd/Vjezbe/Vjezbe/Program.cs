@@ -3,4 +3,5 @@
 //V01BMICalc.Izvedi();
 //V02CalcBMI.Izvedi();
 //V03TicketPrice.Izvedi();
-CiklicnaTablica.Izvedi();
+//CiklicnaTablica.Izvedi();
+CiklicnaTablica2.Izvedi();
