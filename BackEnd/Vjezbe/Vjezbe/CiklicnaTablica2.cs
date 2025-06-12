@@ -19,7 +19,6 @@ namespace Vjezbe
 
             int[,] brojevi = new int[redak, stupac];
 
-            int maxBroj = redak + stupac;
             int suma = 1;
 
             int redakMax = redak - 1;
@@ -31,7 +30,7 @@ namespace Vjezbe
             int stupacMax = stupac - 1;
             int right = stupacMax;
 
-            while (top<=bottom && left<=right)
+            while (top <= bottom && left <= right)
             {
                 while (bottom == redakMax)
                 {
@@ -80,7 +79,7 @@ namespace Vjezbe
             {
                 for (int j = 0; j < stupac; j++)
                 {
-                    Console.Write("{0}.", brojevi[i,j]);
+                    Console.Write("{0}.", brojevi[i, j]);
                 }
                 Console.WriteLine();
             }
@@ -98,6 +97,7 @@ namespace Vjezbe
 
             //    }
             //    Console.WriteLine();
+            //}
         }
     }
 }
