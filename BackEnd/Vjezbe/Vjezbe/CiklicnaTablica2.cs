@@ -14,6 +14,7 @@ namespace Vjezbe
 
             Console.Write("Broj redaka: ");
             int redak = int.Parse(Console.ReadLine());
+            
             Console.Write("Broj stupaca: ");
             int stupac = int.Parse(Console.ReadLine());
 
@@ -84,20 +85,20 @@ namespace Vjezbe
                 Console.WriteLine();
             }
 
-            //int[,] indexi = new int[redak, stupac];
-            //for (int i = 0; i < redak; i++)
-            //{
+            int[,] indexi = new int[redak, stupac];
+            for (int i = 0; i < redak; i++)
+            {
 
-            //    indexi[i, 0] = i;
+                indexi[i, 0] = i;
 
-            //    for (int j = 0; j < stupac; j++)
-            //    {
-            //        indexi[0, j] = j;
-            //        Console.Write("{0}{1}.", i, j);
+                for (int j = 0; j < stupac; j++)
+                {
+                    indexi[0, j] = j;
+                    Console.Write("{0}{1}.", i, j);
 
-            //    }
-            //    Console.WriteLine();
-            //}
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
