@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -30,30 +31,12 @@ namespace Vjezbe
         }
 
         /// <summary>
-        /// Provjerava je li zadani string moguće pretvoriti u cijeli broj (int).
-        /// </summary>
-        /// <param name="s">String za provjeru.</param>
-        /// <returns>True ako je string cijeli broj, inače false.</returns>
-        public static bool IsCijeliBroj(string s)
-        {
-            try
-            {
-                int.Parse(s);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
         /// Učitava cijeli broj koji korisnik unese putem konzole.
         /// Ponovno traži unos dok korisnik ne unese ispravan cijeli broj.
         /// </summary>
         /// <param name="poruka">Poruka koja se prikazuje korisniku prije unosa.</param>
         /// <returns>Uneseni cijeli broj.</returns>
-        public static int ucitajCijeliBroj(string poruka)
+        public static int UcitajCijeliBroj(string poruka)
         {
             while (true)
             {
@@ -68,5 +51,50 @@ namespace Vjezbe
                 }
             }
         }
+
+        //***********************************************************************************
+
+        public static int[] TestLjubavi(int[] brojevi)
+        {
+            int minIndex = 0;
+            int maxIndex = brojevi.Length - 1;
+            int[] noviNiz;
+            int noviNizIndex = 0;
+            int suma = 0;
+
+            if (brojevi.Length % 2 == 0)
+            {
+                noviNiz = new int[brojevi.Length / 2];
+            }
+            else
+            {
+                noviNiz = new int[(brojevi.Length / 2) + 1];
+            }
+
+
+            if (noviNiz.Length > 2)
+            {
+                while (minIndex < maxIndex)
+                {
+                    suma = brojevi[minIndex] + brojevi[maxIndex];
+                    noviNiz[noviNizIndex] = suma;
+                    minIndex++;
+                    maxIndex--;
+                    noviNizIndex++;
+                }
+                if (minIndex == maxIndex)
+                {
+                    noviNiz[noviNizIndex] = brojevi[minIndex];
+                }
+
+                return TestLjubavi(noviNiz);
+            }
+            string rezultat = string.Join("", noviNiz);
+            Console.WriteLine("Volite se {0}%", rezultat);
+            return noviNiz;
+
+        }
+
+        //**************************************************************************
     }
 }

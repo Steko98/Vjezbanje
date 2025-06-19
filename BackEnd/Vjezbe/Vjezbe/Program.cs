@@ -6,4 +6,5 @@
 ////CiklicnaTablica.Izvedi();
 //CiklicnaTablica2.Izvedi();
 //CiklicnaTablica3.Izvedi();
-TestLjubavi.Izvedi();
+//TestLjubavi.Izvedi();
+TestLjubavi2.Izvedi();
