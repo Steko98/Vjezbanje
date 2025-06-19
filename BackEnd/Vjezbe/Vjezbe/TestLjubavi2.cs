@@ -34,6 +34,8 @@ namespace Vjezbe
                 }
             }
 
+            Console.WriteLine("{0}", string.Join(",", kolicinaZnakova));
+
             Pomocno.TestLjubavi(kolicinaZnakova);
 
         }

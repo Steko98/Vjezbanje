@@ -72,7 +72,7 @@ namespace Vjezbe
             }
 
 
-            if (noviNiz.Length > 2)
+            while (noviNiz.Length > 2)
             {
                 while (minIndex < maxIndex)
                 {
@@ -87,10 +87,12 @@ namespace Vjezbe
                     noviNiz[noviNizIndex] = brojevi[minIndex];
                 }
 
+                Console.WriteLine("{0}", string.Join(",", noviNiz));
                 return TestLjubavi(noviNiz);
             }
+
             string rezultat = string.Join("", noviNiz);
-            Console.WriteLine("Volite se {0}%", rezultat);
+            Console.WriteLine(rezultat);
             return noviNiz;
 
         }
