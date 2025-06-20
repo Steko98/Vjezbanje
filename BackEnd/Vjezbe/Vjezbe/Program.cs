@@ -6,5 +6,6 @@
 ////CiklicnaTablica.Izvedi();
 //CiklicnaTablica2.Izvedi();
 //CiklicnaTablica3.Izvedi();
+//TwoSum.Izvedi();
 //TestLjubavi.Izvedi();
 TestLjubavi2.Izvedi();

@@ -77,18 +77,18 @@ namespace Vjezbe
                 while (minIndex < maxIndex)
                 {
                     suma = brojevi[minIndex] + brojevi[maxIndex];
-                    //if (suma >= 10)
-                    //{
-                    //    noviNiz[noviNizIndex] = suma / 10;
-                    //    noviNizIndex++;
-                    //    noviNiz[noviNizIndex] = suma % 10;
-                    //    noviNizIndex++;
-                    //} else { 
-                    noviNiz[noviNizIndex] = suma;
+                    if (suma >= 10)
+                    {
+                        noviNiz[noviNizIndex] = suma / 10;
+                        noviNiz[noviNizIndex] = suma % 10;
+                    }
+                    else
+                    {
+                        noviNiz[noviNizIndex] = suma;
                     minIndex++;
                     maxIndex--;
                     noviNizIndex++;
-                    //}
+                    }
                 }
                 if (minIndex == maxIndex)
                 {
