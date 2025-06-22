@@ -115,23 +115,23 @@ namespace Vjezbe
 
 
 
-            //Console.WriteLine("**************************************");
-            //Console.WriteLine("Indexi tablice");
-            //int[,] indexi = new int[redak, stupac];
-            //for (int i = 0; i < redak; i++)
-            //{
+            Console.WriteLine("**************************************");
+            Console.WriteLine("Indexi tablice");
+            int[,] indexi = new int[redak, stupac];
+            for (int i = 0; i < redak; i++)
+            {
 
-            //    indexi[i, 0] = i;
+                indexi[i, 0] = i;
 
-            //    for (int j = 0; j < stupac; j++)
-            //    {
-            //        indexi[0, j] = j;
-            //        Console.Write("{0}{1}.", i, j);
+                for (int j = 0; j < stupac; j++)
+                {
+                    indexi[0, j] = j;
+                    Console.Write("{0}{1}.", i, j);
 
-            //    }
-            //    Console.WriteLine();
-            //}
-            //Console.WriteLine("**************************************");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine("**************************************");
         }
     }
 }
