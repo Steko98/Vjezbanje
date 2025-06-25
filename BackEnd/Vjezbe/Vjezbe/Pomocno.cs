@@ -9,6 +9,7 @@ namespace Vjezbe
 {
     internal class Pomocno
     {
+        //***********************************************************************************************************************
         /// <summary>
         /// Učitava i vraća string koji korisnik unese putem konzole.
         /// Ponovno traži unos dok korisnik ne unese ne-prazan string.
@@ -29,7 +30,7 @@ namespace Vjezbe
                 Console.WriteLine("Obavezan unos!");
             }
         }
-
+        //***********************************************************************************************************************
         /// <summary>
         /// Učitava cijeli broj koji korisnik unese putem konzole.
         /// Ponovno traži unos dok korisnik ne unese ispravan cijeli broj.
@@ -47,64 +48,51 @@ namespace Vjezbe
                 }
                 catch
                 {
-                    Console.WriteLine("Pokusajte ponovo");
+                    Console.WriteLine("Potrebno je unijeti broj znamenkom. Pokušajte ponovno.");
                 }
             }
         }
-
-        //***********************************************************************************
-
-        public static int[] TestLjubavi(int[] brojevi)
+        /// <summary>
+        /// Učitava i vraća bool vrijednost na temelju korisničkog unosa.
+        /// Korisniku se prikazuje poruka s opcijama '1 za DA' ili '2 za NE'.
+        /// Ponovno traži unos dok korisnik ne unese ispravan broj (1 ili 2).
+        /// </summary>
+        /// <param name="poruka">Poruka koja se prikazuje korisniku prije unosa.</param>
+        /// <returns>True ako korisnik unese 1 (DA), false ako unese 2 (NE).</returns>
+        public static bool UcitajBool(string poruka)
         {
-            int minIndex = 0;
-            int maxIndex = brojevi.Length - 1;
-            int[] noviNiz;
-            int noviNizIndex = 0;
-            int suma = 0;
-
-            if (brojevi.Length % 2 == 0)
+            while (true)
             {
-                noviNiz = new int[brojevi.Length / 2];
-            }
-            else
-            {
-                noviNiz = new int[(brojevi.Length / 2) + 1];
-            }
+                Console.Write(poruka + " (1 za DA ili 2 za NE): ");
+                int odabir = 0;
 
-
-            while (noviNiz.Length > 2)
-            {
-                while (minIndex < maxIndex)
+                for (; ; )
                 {
-                    suma = brojevi[minIndex] + brojevi[maxIndex];
-                    if (suma >= 10)
+                    try
                     {
-                        noviNiz[noviNizIndex] = suma / 10;
-                        noviNiz[noviNizIndex] = suma % 10;
+                        odabir = int.Parse(Console.ReadLine());
+                        break;
                     }
-                    else
+                    catch
                     {
-                        noviNiz[noviNizIndex] = suma;
-                    minIndex++;
-                    maxIndex--;
-                    noviNizIndex++;
+                        Console.WriteLine("Nevažeći unos. Pokušajte ponovno.");
                     }
                 }
-                if (minIndex == maxIndex)
+                if (odabir == 1)
                 {
-                    noviNiz[noviNizIndex] = brojevi[minIndex];
+                    return true;
                 }
-
-                Console.WriteLine("{0}", string.Join(",", noviNiz));
-                return TestLjubavi(noviNiz);
+                else if (odabir == 2)
+                {
+                    return false;
+                }
+                else
+                {
+                    Console.Write("Nevažeći unos. Molimo unesite '1' za DA ili '2' za NE. Pokušajte ponovo: ");
+                    odabir = int.Parse(Console.ReadLine());
+                }
             }
-
-            string rezultat = string.Join("", noviNiz);
-            Console.WriteLine(rezultat);
-            return noviNiz;
-
         }
-
-        //**************************************************************************
+        //***********************************************************************************************************************
     }
 }
