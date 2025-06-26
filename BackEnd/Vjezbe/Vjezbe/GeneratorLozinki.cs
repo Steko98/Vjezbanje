@@ -43,15 +43,15 @@ namespace Vjezbe
             {
                 sviZnakovi += velikaSlova;
             }
-            else if (malaSlovaOdabir)
+            if (malaSlovaOdabir)
             {
                 sviZnakovi += malaSlova;
             }
-            else if (brojeviOdabir)
+            if (brojeviOdabir)
             {
                 sviZnakovi += brojevi;
             }
-            else if (interpunkcijskiOdabir)
+            if (interpunkcijskiOdabir)
             {
                 sviZnakovi += interpunkcijski;
             }
@@ -129,14 +129,89 @@ namespace Vjezbe
                 ponavljanje = true;
             } else
             {
-                ponavljanje = Pomocno.UcitajBool("Lozinka ima ponavljajuće znakove?");
+                ponavljanje = Pomocno.UcitajBool("Dopustiti ponavljanje znakova u lozinci?");
             }
 
             int brojLozinki = Pomocno.UcitajCijeliBroj("Unesite broj lozinki koje želite");
+
+            Random broj = new Random();
+            int nekiIndex;
+            int nekiDrugiIndex;
             
-            for (int i = 0; i < brojLozinki; i++) //generira broj lozinki
+            for (int i = 0; i < brojLozinki; i++)
             {
-                
+                char[] lozinka = new char[duzinaLozinke];
+                char[] iskoristeniZnakovi = new char[duzinaLozinke];
+
+                List<int> slobodniIndexi = new List<int>();
+                for (int j = 0; j < duzinaLozinke; j++)
+                {
+                    slobodniIndexi.Add(j);
+                }
+
+                if (pocetakBroj)
+                {
+                    nekiIndex = broj.Next(0, brojevi.Length);
+                    lozinka[0] = brojevi[nekiIndex];
+                    iskoristeniZnakovi[0] = brojevi[nekiIndex];
+                    slobodniIndexi.Remove(0);
+                } else if (pocetakZnak)
+                {
+                    nekiIndex = broj.Next(0, interpunkcijski.Length);
+                    lozinka[0] = interpunkcijski[nekiIndex];
+                    iskoristeniZnakovi[0] = interpunkcijski[nekiIndex];
+                    slobodniIndexi.Remove(0);
+                }
+
+                if (krajBroj)
+                {
+                    nekiIndex = broj.Next(0, brojevi.Length);
+                    lozinka[duzinaLozinke-1] = brojevi[nekiIndex];
+                    slobodniIndexi.Remove(duzinaLozinke - 1);
+                } else if (krajZnak)
+                {
+                    nekiIndex = broj.Next(0, interpunkcijski.Length);
+                    lozinka[duzinaLozinke - 1] = interpunkcijski[nekiIndex];
+                    slobodniIndexi.Remove(duzinaLozinke - 1);
+                }
+
+                if (velikaSlovaOdabir)
+                {
+                    nekiIndex = broj.Next(slobodniIndexi.Count);
+                    nekiDrugiIndex = broj.Next(0, velikaSlova.Length);
+                    lozinka[slobodniIndexi[nekiIndex]] = velikaSlova[nekiDrugiIndex];
+                    slobodniIndexi.RemoveAt(nekiIndex);
+                }
+                if (malaSlovaOdabir)
+                {
+                    nekiIndex = broj.Next(slobodniIndexi.Count);
+                    nekiDrugiIndex = broj.Next(0, malaSlova.Length);
+                    lozinka[slobodniIndexi[nekiIndex]] = malaSlova[nekiDrugiIndex];
+                    slobodniIndexi.RemoveAt(nekiIndex);
+                }
+                if (brojeviOdabir)
+                {
+                    nekiIndex = broj.Next(slobodniIndexi.Count);
+                    nekiDrugiIndex = broj.Next(0, brojevi.Length);
+                    lozinka[slobodniIndexi[nekiIndex]] = brojevi[nekiDrugiIndex];
+                    slobodniIndexi.RemoveAt(nekiIndex);
+                }
+                if (interpunkcijskiOdabir)
+                {
+                    nekiIndex = broj.Next(slobodniIndexi.Count);
+                    nekiDrugiIndex = broj.Next(0, interpunkcijski.Length);
+                    lozinka[slobodniIndexi[nekiIndex]] = interpunkcijski[nekiDrugiIndex];
+                    slobodniIndexi.RemoveAt(nekiIndex);
+                }
+
+                foreach (int index in slobodniIndexi)
+                {
+                    nekiIndex = broj.Next(0, sviZnakovi.Length);
+                    lozinka[index] = sviZnakovi[nekiIndex];
+                }
+
+                Console.WriteLine(string.Join("", lozinka));
+
             }
 
         }
