@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,10 +15,11 @@ namespace Vjezbe
             string malaSlova = velikaSlova.ToLower();
             string brojevi = "0123456789";
             string interpunkcijski = "!@#$%^&*()_+-=[]{}|;':\",.<>/?`~";
+            char noviZnak;
 
             int duzinaLozinke = Pomocno.UcitajCijeliBroj("Unesite dužinu lozinke");
 
-            while (duzinaLozinke <8 || duzinaLozinke > 64)
+            while (duzinaLozinke < 8 || duzinaLozinke > 64)
             {
                 Console.WriteLine("Lozinka može imati izneđu 8 i 64 znaka");
                 duzinaLozinke = Pomocno.UcitajCijeliBroj("Ponovno unesite dužinu lozinke");
@@ -65,7 +67,7 @@ namespace Vjezbe
             }
             else
             {
-            pocetakBroj = Pomocno.UcitajBool("Lozinka počinje brojem?");
+                pocetakBroj = Pomocno.UcitajBool("Lozinka počinje brojem?");
             }
             if (!interpunkcijskiOdabir)
             {
@@ -83,7 +85,8 @@ namespace Vjezbe
                 if (pocetakBroj)
                 {
                     pocetakZnak = false;
-                } else if (!pocetakBroj)
+                }
+                else if (!pocetakBroj)
                 {
                     pocetakZnak = Pomocno.UcitajBool("Lozinka počinje interpunkcijskim znakom?");
                 }
@@ -127,7 +130,8 @@ namespace Vjezbe
             if (duzinaLozinke > sviZnakovi.Length)
             {
                 ponavljanje = true;
-            } else
+            }
+            else
             {
                 ponavljanje = Pomocno.UcitajBool("Dopustiti ponavljanje znakova u lozinci?");
             }
@@ -137,11 +141,11 @@ namespace Vjezbe
             Random broj = new Random();
             int nekiIndex;
             int nekiDrugiIndex;
-            
+
             for (int i = 0; i < brojLozinki; i++)
             {
                 char[] lozinka = new char[duzinaLozinke];
-                char[] iskoristeniZnakovi = new char[duzinaLozinke];
+                List<char> iskoristeniZnakovi = new List<char>();
 
                 List<int> slobodniIndexi = new List<int>();
                 for (int j = 0; j < duzinaLozinke; j++)
@@ -153,61 +157,174 @@ namespace Vjezbe
                 {
                     nekiIndex = broj.Next(0, brojevi.Length);
                     lozinka[0] = brojevi[nekiIndex];
-                    iskoristeniZnakovi[0] = brojevi[nekiIndex];
+                    iskoristeniZnakovi.Add(brojevi[nekiIndex]);
                     slobodniIndexi.Remove(0);
-                } else if (pocetakZnak)
+                }
+                else if (pocetakZnak)
                 {
                     nekiIndex = broj.Next(0, interpunkcijski.Length);
                     lozinka[0] = interpunkcijski[nekiIndex];
-                    iskoristeniZnakovi[0] = interpunkcijski[nekiIndex];
+                    iskoristeniZnakovi.Add(interpunkcijski[nekiIndex]);
                     slobodniIndexi.Remove(0);
                 }
 
                 if (krajBroj)
                 {
-                    nekiIndex = broj.Next(0, brojevi.Length);
-                    lozinka[duzinaLozinke-1] = brojevi[nekiIndex];
-                    slobodniIndexi.Remove(duzinaLozinke - 1);
-                } else if (krajZnak)
+                    if (!ponavljanje)
+                    {
+                        do
+                        {
+                            nekiIndex = broj.Next(0, brojevi.Length);
+                            noviZnak = brojevi[nekiIndex];
+                        }
+                        while (iskoristeniZnakovi.Contains(noviZnak));
+                        lozinka[duzinaLozinke - 1] = noviZnak;
+                        iskoristeniZnakovi.Add(noviZnak);
+                        slobodniIndexi.Remove(duzinaLozinke - 1);
+                    }
+                    else
+                    {
+                        nekiIndex = broj.Next(0, brojevi.Length);
+                        lozinka[duzinaLozinke - 1] = brojevi[nekiIndex];
+                        iskoristeniZnakovi.Add(brojevi[nekiIndex]);
+                        slobodniIndexi.Remove(duzinaLozinke - 1);
+                    }
+                }
+                else if (krajZnak)
                 {
-                    nekiIndex = broj.Next(0, interpunkcijski.Length);
-                    lozinka[duzinaLozinke - 1] = interpunkcijski[nekiIndex];
-                    slobodniIndexi.Remove(duzinaLozinke - 1);
+                    if (!ponavljanje)
+                    {
+                        do
+                        {
+                            nekiIndex = broj.Next(0, interpunkcijski.Length);
+                            noviZnak = interpunkcijski[nekiIndex];
+                        }
+                        while (iskoristeniZnakovi.Contains(noviZnak));
+                        lozinka[duzinaLozinke - 1] = noviZnak;
+                        iskoristeniZnakovi.Add(noviZnak);
+                        slobodniIndexi.Remove(duzinaLozinke - 1);
+                    }
+                    else
+                    {
+                        nekiIndex = broj.Next(0, interpunkcijski.Length);
+                        lozinka[duzinaLozinke - 1] = interpunkcijski[nekiIndex];
+                        iskoristeniZnakovi.Add(interpunkcijski[nekiIndex]);
+                        slobodniIndexi.Remove(duzinaLozinke - 1);
+                    }
                 }
 
                 if (velikaSlovaOdabir)
                 {
-                    nekiIndex = broj.Next(slobodniIndexi.Count);
-                    nekiDrugiIndex = broj.Next(0, velikaSlova.Length);
-                    lozinka[slobodniIndexi[nekiIndex]] = velikaSlova[nekiDrugiIndex];
-                    slobodniIndexi.RemoveAt(nekiIndex);
+                    if (!ponavljanje)
+                    {
+                        do
+                        {
+                            nekiIndex = broj.Next(0, velikaSlova.Length);
+                            noviZnak = velikaSlova[nekiIndex];
+                        }
+                        while (iskoristeniZnakovi.Contains(noviZnak));
+                        nekiIndex = broj.Next(slobodniIndexi.Count);
+                        lozinka[slobodniIndexi[nekiIndex]] = noviZnak;
+                        iskoristeniZnakovi.Add(noviZnak);
+                        slobodniIndexi.RemoveAt(nekiIndex);
+                    }
+                    else
+                    {
+                        nekiIndex = broj.Next(slobodniIndexi.Count);
+                        nekiDrugiIndex = broj.Next(0, velikaSlova.Length);
+                        lozinka[slobodniIndexi[nekiIndex]] = velikaSlova[nekiDrugiIndex];
+                        slobodniIndexi.RemoveAt(nekiIndex);
+                        iskoristeniZnakovi.Add(velikaSlova[nekiDrugiIndex]);
+                    }
                 }
                 if (malaSlovaOdabir)
                 {
-                    nekiIndex = broj.Next(slobodniIndexi.Count);
-                    nekiDrugiIndex = broj.Next(0, malaSlova.Length);
-                    lozinka[slobodniIndexi[nekiIndex]] = malaSlova[nekiDrugiIndex];
-                    slobodniIndexi.RemoveAt(nekiIndex);
+                    if (!ponavljanje)
+                    {
+                        do
+                        {
+                            nekiIndex = broj.Next(0, malaSlova.Length);
+                            noviZnak = malaSlova[nekiIndex];
+                        }
+                        while (iskoristeniZnakovi.Contains(noviZnak));
+                        nekiIndex = broj.Next(slobodniIndexi.Count);
+                        lozinka[slobodniIndexi[nekiIndex]] = noviZnak;
+                        iskoristeniZnakovi.Add(noviZnak);
+                        slobodniIndexi.RemoveAt(nekiIndex);
+                    } else
+                    {
+                        nekiIndex = broj.Next(slobodniIndexi.Count);
+                        nekiDrugiIndex = broj.Next(0, malaSlova.Length);
+                        lozinka[slobodniIndexi[nekiIndex]] = malaSlova[nekiDrugiIndex];
+                        slobodniIndexi.RemoveAt(nekiIndex);
+                        iskoristeniZnakovi.Add(malaSlova[nekiDrugiIndex]);
+                    }
                 }
                 if (brojeviOdabir)
                 {
-                    nekiIndex = broj.Next(slobodniIndexi.Count);
-                    nekiDrugiIndex = broj.Next(0, brojevi.Length);
-                    lozinka[slobodniIndexi[nekiIndex]] = brojevi[nekiDrugiIndex];
-                    slobodniIndexi.RemoveAt(nekiIndex);
+                    if (!ponavljanje)
+                    {
+                        do
+                        {
+                            nekiIndex = broj.Next(0, brojevi.Length);
+                            noviZnak = brojevi[nekiIndex];
+                        }
+                        while (iskoristeniZnakovi.Contains(noviZnak));
+                        nekiIndex = broj.Next(slobodniIndexi.Count);
+                        lozinka[slobodniIndexi[nekiIndex]] = noviZnak;
+                        iskoristeniZnakovi.Add(noviZnak);
+                        slobodniIndexi.RemoveAt(nekiIndex);
+                    } else
+                    {
+                        nekiIndex = broj.Next(slobodniIndexi.Count);
+                        nekiDrugiIndex = broj.Next(0, brojevi.Length);
+                        lozinka[slobodniIndexi[nekiIndex]] = brojevi[nekiDrugiIndex];
+                        slobodniIndexi.RemoveAt(nekiIndex);
+                        iskoristeniZnakovi.Add(brojevi[nekiDrugiIndex]);
+                    }
                 }
                 if (interpunkcijskiOdabir)
                 {
-                    nekiIndex = broj.Next(slobodniIndexi.Count);
-                    nekiDrugiIndex = broj.Next(0, interpunkcijski.Length);
-                    lozinka[slobodniIndexi[nekiIndex]] = interpunkcijski[nekiDrugiIndex];
-                    slobodniIndexi.RemoveAt(nekiIndex);
+                    if (!ponavljanje)
+                    {
+                        do
+                        {
+                            nekiIndex = broj.Next(0, interpunkcijski.Length);
+                            noviZnak = interpunkcijski[nekiIndex];
+                        }
+                        while (iskoristeniZnakovi.Contains(noviZnak));
+                        nekiIndex = broj.Next(slobodniIndexi.Count);
+                        lozinka[slobodniIndexi[nekiIndex]] = noviZnak;
+                        iskoristeniZnakovi.Add(noviZnak);
+                        slobodniIndexi.RemoveAt(nekiIndex);
+                    } else
+                    {
+                        nekiIndex = broj.Next(slobodniIndexi.Count);
+                        nekiDrugiIndex = broj.Next(0, interpunkcijski.Length);
+                        lozinka[slobodniIndexi[nekiIndex]] = interpunkcijski[nekiDrugiIndex];
+                        slobodniIndexi.RemoveAt(nekiIndex);
+                        iskoristeniZnakovi.Add(interpunkcijski[nekiDrugiIndex]);
+                    }
                 }
 
                 foreach (int index in slobodniIndexi)
                 {
-                    nekiIndex = broj.Next(0, sviZnakovi.Length);
-                    lozinka[index] = sviZnakovi[nekiIndex];
+                    if (!ponavljanje)
+                    {
+                        do
+                        {
+                            nekiIndex = broj.Next(0, sviZnakovi.Length);
+                            noviZnak = sviZnakovi[nekiIndex];
+                        }
+                        while (iskoristeniZnakovi.Contains(noviZnak));
+                        lozinka[index] = noviZnak;
+                        iskoristeniZnakovi.Add(noviZnak);
+                    }
+                    else
+                    {
+                        nekiIndex = broj.Next(0, sviZnakovi.Length);
+                        lozinka[index] = sviZnakovi[nekiIndex];
+                    }
                 }
 
                 Console.WriteLine(string.Join("", lozinka));
