@@ -1,0 +1,32 @@
+store_id,type,address,city,zipcode
+310002,diskontna_prodavaonica,I Štefanovecki zavoj 12,Zagreb,10000
+310003,supermarket,4 Gardijske Brigade 1,Zadar,23000
+310004,diskontna_prodavaonica,Zagrebacka 52,Požega,34000
+310005,diskontna_prodavaonica,Ulica hrvatskih branitelja 2,Samobor,10430
+310006,diskontna_prodavaonica,Ulica Juraja Dobrile 1C,Velika_Gorica,10410
+310007,diskontna_prodavaonica,Ulica kralja Tomislava 47A,Križevci,48260
+310008,diskontna_prodavaonica,Obrtnicka ulica 2,Cakovec,40000
+310009,diskontna_prodavaonica,Celine 2,Vrbovec,10340
+310010,diskontna_prodavaonica,Ulica Mate Vlašica 51A,Porec,52440
+310011,diskontna_prodavaonica,Ulica Vlahe Paljetka 7,Bjelovar,43000
+310012,diskontna_prodavaonica,Zagrebacka ul 49G,Sisak,44000
+310013,diskontna_prodavaonica,Ulica Rimske centurijacije 100,Pula,52100
+310014,diskontna_prodavaonica,Ulica Petra Svacica 2B,Slavonski_Brod,35000
+310015,diskontna_prodavaonica,Solinska ulica 84,Split,21000
+310016,supermarket,Ulica Furicevo 20,Viškovo,51216
+310017,diskontna_prodavaonica,Gacka ulica 70,Osijek,31000
+310018,supermarket,Zagrebacka cesta 162A,Zagreb_Dubec,10360
+310019,diskontna_prodavaonica,Ulica Ante Starcevica 20,Zaprešic,10290
+310021,diskontna_prodavaonica,Ulica Matije Gupca 59,Zadar,23000
+310023,supermarket,Žutska ulica broj 1,Biograd,23000
+310024,diskontna_prodavaonica,Ulica Mihovila P Miškine 5,Koprivnica,48000
+310026,diskontna_prodavaonica,Štrmac 303,Labin,52220
+310027,diskontna_prodavaonica,Ulica Istarskih narodnjaka 17 Stop Shop,Pazin,52000
+310028,diskontna_prodavaonica,Stop shop,Ðakovo,31400
+310030,supermarket,Cesta Dalmatinskih brigada 7a,Matulji,51211
+310032,diskontna_prodavaonica,Ulica hrvatskog preporoda 70 Dugo Selo,Dugo_Selo,10370
+310033,supermarket,Koprivnicka ulica 34A,Ludbreg,42230
+310034,diskontna_prodavaonica,Ulica Veceslava Holjevca 15,Jastrebarsko,10450
+310035,diskontna_prodavaonica,Zvonarska ulica 63,Vinkovci,32100
+310036,diskontna_prodavaonica,Ulica Ote Horvata 1 33000 Virovitica,Virovitica,33000
+310037,supermarket,Ljudevita Šestica 7,Karlovac,

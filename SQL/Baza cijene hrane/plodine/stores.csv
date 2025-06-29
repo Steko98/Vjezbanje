@@ -1,0 +1,148 @@
+store_id,type,address,city,zipcode
+064,hipermarket,Ante Starcevica 21,Zapresic,10290
+066,hipermarket,Kukuljanovo 344,Kukuljanovo,51227
+001,hipermarket,Marinici 182A,Viskovo,51216
+055,hipermarket,Mije Haleusa 1,Zagreb,10000
+054,hipermarket,Put Pazdigrada 5,Split,21000
+008,hipermarket,Stefanovecki Zavoj 10,Zagreb,10000
+091,hipermarket,Stoja 14A,Pula,52100
+073,hipermarket,Ulica Karla Metikosa 4,Zagreb Novi Zagreb,10020
+108,hipermarket,Ulica Martina Kontusa 5,Rijeka,51000
+015,hipermarket,Zagrebacka 2,Zadar,23000
+061,hipermarket,Zvonimirova 3,Rijeka,51000
+152,supermarket,Alojzija Stepinca 201,Vinkovci,32100
+124,supermarket,Ante Starcevica 47,Korcula,20260
+059,supermarket,Antona Mataije 17,Novi Vinodolski,51250
+128,supermarket,Antuna Mihanovica 82,Prelog,40323
+151,supermarket,Augusta Senoe 2B,Daruvar,43500
+163,supermarket,Bana Josipa Jelacica 158A,Pleternica,34310
+120,supermarket,Bana Josipa Jelacica 1B,Orebic,20250
+075,supermarket,Banija 88,Karlovac,47000
+050,supermarket,Bartola Kasica 7,Rijeka,51000
+005,supermarket,Biogradska 68,Zadar,23000
+028,supermarket,Bizovacka 10,Valpovo,31550
+057,supermarket,Blazenog Alojzija Stepinca 3,Biograd Na Moru,23210
+090,supermarket,Brajde 7,Tar,52465
+034,supermarket,Budacka Ulica 25,Gospic,53000
+076,supermarket,Carlotte Grisi 1,Novigrad(Cittanova),52466
+112,supermarket,Cesta Dalmatinskih Brigada 9A,Matulji,51211
+097,supermarket,Cikovici 9B,Kastav,51215
+156,supermarket,Ciponjac 1,Novalja,53291
+102,supermarket,Creska 2A,Porec,52440
+117,supermarket,Crna Rika 3,Ploce,20340
+178,supermarket,Digitronska 27A,Buje,52460
+162,supermarket,Dol 1A,Vis,21480
+154,supermarket,Duga Ulica 59A,Varazdinske Toplice,42223
+166,supermarket,Golubovecka 36B,Donja Stubica,49240
+017,supermarket,Gospodarska 33,Varazdin,42000
+062,supermarket,Gospodarska Ulica 12,Ludbreg,42230
+033,supermarket,Grgura Ninskog 19,Nova Gradiska,35400
+039,supermarket,Hrvoja Vukcica Hrvatinica 5,Vinkovci,32100
+053,supermarket,Huttlerova 30,Osijek,31000
+016,supermarket,I Cesmickog 5A,Koprivnica,48000
+011,supermarket,I Mestrovica 70,Sibenik,22000
+093,supermarket,Istarska 1P,Funtana,52452
+095,supermarket,Jadranska Cesta 78,Sveti Filip I Jakov,23207
+099,supermarket,Jadranska Magistrala 13,Pakostane,23211
+122,supermarket,Jadranska Ulica 44A,Posedarje,23242
+161,supermarket,Janka Leskovara 12 2,Pregrada,49218
+116,supermarket,Jelsa 1018A,Jelsa,21465
+030,supermarket,J J Strossmayera 343,Osijek,31000
+067,supermarket,Josipa Zorica 117,Dugo Selo,10370
+012,supermarket,J Zakna 12,Pula,52100
+084,supermarket,Kardinala Alojzija Stepinca 112,Trogir,21220
+174,supermarket,Karlovacka Cesta 125A,Ozalj,47280
+113,supermarket,Karlov Vrt 2A,Zminj,52341
+056,supermarket,Kastavska Cesta 19,Matulji,51211
+143,supermarket,Klokovec 260A,Krapinske Toplice,49217
+009,supermarket,Kotorska 9,Crikvenica,51260
+032,supermarket,Kralja Petra Kresimira Iv 4B,Nasice,31500
+149,supermarket,Kralja Tomislava 65,Novska,44330
+142,supermarket,Krizine 10,Tribunj,22212
+137,supermarket,Labinska 51A,Rijeka,51000
+129,supermarket,Ljubljanska Avenija 2B,Zagreb,10000
+051,supermarket,Mate Vlasica 38,Porec,52440
+042,supermarket,Milana Novacica 15,Cazma,43240
+083,supermarket,Mundanije 12B,Rab,51280
+071,supermarket,Munida 3B,Medulin,52203
+086,supermarket,Mutilska Ulica 60B,Pula,52100
+031,supermarket,Naselje Korenika 1 1,Buzet,52420
+049,supermarket,Nova Cesta 28,Ogulin,47300
+010,supermarket,Novigradska 24,Umag,52470
+044,supermarket,Optujska 151,Varazdin,42000
+007,supermarket,Osjecka 50,Rijeka,51000
+148,supermarket,Osjecka Ulica 1J,Beli Manastir,31300
+041,supermarket,Osjecka Ulica 62H,Pozega,34000
+126,supermarket,Ostroska 1A,Zaostrog,21334
+110,supermarket,Otocka Cesta 10,Kali,23272
+169,supermarket,Otocka Cesta 14,Pasman,23262
+127,supermarket,Pacipolje 20,Murter,22243
+026,supermarket,Pakracka Ulica 7,Bjelovar,43000
+046,supermarket,Petra Zoranica 20,Benkovac,23420
+109,supermarket,Pirovacka Ulica 1A,Pirovac,22213
+136,supermarket,Poduzetnicka Zona 1A,Opuzen,20355
+107,supermarket,Podvornica 1,Rogoznica,22203
+150,supermarket,Pomer 350C,Pomer,52100
+036,supermarket,Preradoviceva 96A,Djakovo,31400
+087,supermarket,Prilaz Dr Franje Tudjmana 9,Nin,23232
+176,supermarket,Pristava Krapinska 63,Krapina,49000
+085,supermarket,Puljska Cesta 20,Fazana,52212
+014,supermarket,Put Cerodola 1,Zadar,23000
+018,supermarket,Put Gaceleza 3,Vodice,22211
+040,supermarket,Put Supavla 15,Split,21000
+144,supermarket,Put Svetog Petra 2,Privlaka,23233
+171,supermarket,Ruzice Mihic 20,Rijeka,51000
+003,supermarket,Ruziceva 29,Rijeka,51000
+106,supermarket,Satnije Putalj 5,Kastel Sucurac,21212
+048,supermarket,Savska Ulica 91,Ivanic Grad,10310
+088,supermarket,Setaliste Marsala Tita 2A,Lovran,51415
+035,supermarket,Sime Kurelica 28,Pazin,52000
+022,supermarket,Sjeverna Vezna Cesta 31,Slavonski Brod,35000
+096,supermarket,Skabrnjska 14,Kastel Stafilic,21217
+019,supermarket,Skolska 3,Sisak,44000
+131,supermarket,Splitska 28A,Metkovic,20350
+074,supermarket,S S Kranjcevica 4,Novalja,53291
+172,supermarket,Stancija Kaligari 2 Zbandaj,Porec,52440
+072,supermarket,Stara Cesta 9,Senj,53270
+020,supermarket,Strmac 320,Nedescina,52231
+070,supermarket,Sv Vid 200,Malinska,51511
+037,supermarket,Tomislavova 51,Krizevci,48260
+153,supermarket,Tosina 16,Volosko,51410
+029,supermarket,Trg Kralja Tomislava 10,Pitomaca,33405
+047,supermarket,Trg Rudjera Boskovica 16 D,Slatina,33520
+118,supermarket,Trninina 3,Rijeka,51000
+177,supermarket,Ul 113 Sibenske Brigade Hv A 195,Sibenik,22000
+082,supermarket,Ul Brace Andrijica 1,Pag,23250
+101,supermarket,Ulica 1 Maja,Vodnjan,52215
+159,supermarket,Ulica 34 Inzenjerijske Bojne 2,Cakovec,40000
+025,supermarket,Ulica Brace Bozic 4B,Rovinj,52210
+098,supermarket,Ulica Dr Franje Tudjmana 7,Sukosan,23206
+063,supermarket,Ulica Franje Tudjmana 83A,Jastrebarsko,10450
+068,supermarket,Ulica Generala Nikole Mastrovica 8,Otocac,53220
+060,supermarket,Ulica Josipa Broza Tita 6,Zabok,49210
+140,supermarket,Ulica Kneza Ljudevita Posavskog 47,Velika Gorica,10410
+114,supermarket,Ulica Kralja Tomislava 57,Strmec,10434
+043,supermarket,Ulica Kralja Zvonimira 4,Cepin,31431
+111,supermarket,Ulica Svetog Martina 4A,Vrsar,52450
+045,supermarket,Ulica Vice Vukova 2,Zagreb,10000
+168,supermarket,Varazdinska Ulica 22D,Lepoglava,42250
+125,supermarket,Velimira Skorpika 11,Zagreb,10000
+052,supermarket,Velimira Skorpika 16,Razine,22000
+175,supermarket,Viskovo 32,Viskovo,51216
+081,supermarket,Volnik 2,Cres,51557
+138,supermarket,Vranovaca 80,Korenica,53230
+121,supermarket,Vrgorska 2,Makarska,21300
+013,supermarket,Vrh Martinscice 69D,Kostrena,51221
+065,supermarket,Vrsanska 28,Krk,51500
+023,supermarket,Vukovarska 10,Zupanja,31270
+021,supermarket,Vukovarska 87,Rijeka,51000
+147,supermarket,Vukovarska 97B,Donji Miholjac,31540
+024,supermarket,Vukovarska Cesta 5A,Virovitica,33000
+170,supermarket,Zagrebacka 1A,Vukovar,32000
+027,supermarket,Zagrebacka 2,Cakovec,40000
+038,supermarket,Zagrebacka 3,Kutina,44320
+069,supermarket,Zagrebacka Ulica 2B,Petrinja,44250
+130,supermarket,Zagrebacka Ulica 60,Vrbovec,10340
+139,supermarket,Zagrebacka Ulica 62,Sveti Ivan Zelina,10380
+167,supermarket,Zametska 96A,Rijeka,51000
+094,supermarket,Zelenice 46,Labin,52220
