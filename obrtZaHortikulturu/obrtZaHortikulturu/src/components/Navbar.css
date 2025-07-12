@@ -1,0 +1,9 @@
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.center-brand {
+  margin-left: auto;
+  margin-right: auto;
+}
