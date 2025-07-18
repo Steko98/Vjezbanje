@@ -6,6 +6,38 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: 0px !important;
+  height: auto !important; /* let height be automatic */
+  max-height: 70vh !important; /* max height relative to viewport */
+  overflow: hidden; /* prevent overflow */
+}
+
+@media (max-width: 768px) {
+  .large-card {
+    max-height: 300px; /* reduce max height on smaller screens */
+  }
+
+  .carousel-wrapper {
+    height: 200px; /* smaller height */
+  }
+}
+
+@media (max-width: 480px) {
+  .large-card {
+    max-height: 180px; /* really small on phones */
+  }
+
+  .carousel-wrapper {
+    height: 140px;
+  }
+
+  .cardNaslovi {
+    font-size: 1rem;
+  }
+
+  .custom-btn {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
 }
 
 .carousel-wrapper {
@@ -51,6 +83,7 @@
 .carousel-item {
   height: 300px; /* match your .carousel-wrapper */
 }
+
 
 .custom-btn {
   display: inline-block;
